@@ -10,17 +10,22 @@
 </head>
 
   <body>
-      <h2> Check Digit Calculator</h2>
-      <label for="cars">Select barcode format :</label>
+    <h2> Check Digit Calculator</h2>
 
-      <select name="barcodes" id="barcodetypes">
-        <option value="volvo">UPC A </option>
-        <option value="saab">UPC E </option>
-        <option value="mercedes">EAN 13</option>
-        <option value="audi">EAN 8 </option>
+    <div>
+      <input type='text' name='input_barcode' id='input_barcode' />
+      <label for="input_barcode">Enter barcode numbers, all exept last digit.</label>
+    </div>
+
+    <div>
+      <select name="input_barcodetype" id="input_barcodetype">
+        <option value="UPC-A">UPC A</option>
+        <option value="UPC-E">UPC E</option>
+        <option value="EAN-13">EAN 13</option>
+        <option value="EAN-8">EAN 8</option>
       </select>
-      <br> 
-      Enter barcode numbers, all exept last digit. 
+      <label for="input_barcodetype">Select barcode format :</label>
+    </div>  
 
   </body>
 </html>
