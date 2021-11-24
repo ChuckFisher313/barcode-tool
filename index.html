@@ -6,7 +6,55 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Barcode Tool </title>
     <link rel="stylesheet" href="style.css">
-<h1> Barcode Tool </h1>
+    <script type='text/javascript'>
+    function GenerateCheckDigit(){
+      console.log('GenerateCheckDigit: invoked');
+      var input_barcode = document.getElementById('input_barcode').value;
+      var input_barcodetype = document.getElementById('input_barcodetype').value;
+      switch (input_barcodetype){
+        case "UPC-A":
+          var barcode = GenerateUPCA(input_barcode)
+          document.getElementById('barcode_result').innerHTML = 'UPC-A: ' + barcode;
+          return;
+        case "UPC-E":
+          var barcode = GenerateUPCE(input_barcode)
+          document.getElementById('barcode_result').innerHTML = 'UPC-E: ' + barcode;
+          return;
+        case "EAN-13":
+          var barcode = GenerateEAN13(input_barcode)
+          document.getElementById('barcode_result').innerHTML = 'EAN-13: ' + barcode;
+          return;
+        case "EAN-8":
+          var barcode = GenerateEAN8(input_barcode)
+          document.getElementById('barcode_result').innerHTML = 'EAN-8: ' + barcode;
+          return;
+      }
+    }
+
+    function GenerateUPCA(orig_barcode){
+      console.log('GenerateUPCA: invoked');
+      var barcode = orig_barcode; // Do some operations here
+      return barcode;
+    }
+
+    function GenerateUPCE(orig_barcode){
+      console.log('GenerateUPCE: invoked');
+      var barcode = orig_barcode; // Do some operations here
+      return barcode;
+    }
+
+    function GenerateEAN13(orig_barcode){
+      console.log('GenerateEAN13: invoked');
+      var barcode = orig_barcode; // Do some operations here
+      return barcode;
+    }
+
+    function GenerateEAN8(orig_barcode){
+      console.log('GenerateEAN8: invoked');
+      var barcode = orig_barcode; // Do some operations here
+      return barcode;
+    }
+    </script>
 </head>
 
   <body>
@@ -27,5 +75,10 @@
      </select>   
     </div>  
 
+    <div>
+      <button onClick='GenerateCheckDigit()'>Generate Check Digit</button>
+    </div>
+
+    <div id='barcode_result'></div>
   </body>
 </html>
