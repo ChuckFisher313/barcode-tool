@@ -3,18 +3,43 @@ label {
   display: block;
 }
 
-#upcAbtn{
-background-color: blue;
+h1 {
+  font-family:Arial, Helvetica, sans-serif;
+  font-size: 25pt;
+  color: rgb(12, 20, 141);
 }
 
-#upcEbtn{
-background-color: blue;
+.btn{
+background-color: white;
+color: rgb(12, 20, 141);
+border-width: 1px;
+border-color:rgb(12, 20, 141); 
+padding: 10px;
+padding-left: 15px;
+padding-right: 15px;
+border-radius: 3px;
+margin-top: 15px;
 }
 
-#ean13btn{
-background-color: blue;
+.textU{
+color: rgb(12, 20, 141);
+font-family:Arial, Helvetica, sans-serif;
+font-size: 13pt;
+font-weight: bold;
+margin-top: 15px;
 }
 
-#ean8btn{
-background-color: blue;
+#divU{
+  margin-top:20px;
+  margin-bottom:20px;
+}
+
+#input_barcode{
+padding: 10px;
+font-size: 18px;
+border-color: rgb(12, 20, 141); 
+border-radius: 3px;
+border-width: 1px;
+margin-top: 20px;
+text-align: center;
 }

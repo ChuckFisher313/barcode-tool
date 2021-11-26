@@ -1,5 +1,68 @@
-function changebtncolor() {
-  console.log("Change button color function executed: invoked")
+// Select the barcode type
+var barcode_type = '';
+function changebtncolor(buttonPressed) {
+  console.log("Change button color function executed: invoked");
+  var upcAbtn = document.getElementById("upcAbtn");
+  var upcEbtn = document.getElementById("upcEbtn");
+  var ean13btn = document.getElementById("ean13btn");
+  var ean8btn = document.getElementById("ean8btn");
+
+  upcAbtn.style.backgroundColor="white";
+  upcAbtn.style.color="rgb(12, 20, 141";
+
+  upcEbtn.style.backgroundColor="white";
+  upcEbtn.style.color="rgb(12, 20, 141";
+
+  ean13btn.style.backgroundColor="white";
+  ean13btn.style.color="rgb(12, 20, 141";
+  
+  ean8btn.style.backgroundColor="white";
+  ean8btn.style.color="rgb(12, 20, 141";
+
+  document.getElementById(buttonPressed).style.backgroundColor="rgb(12, 20, 141)";
+  document.getElementById(buttonPressed).style.color="white";
+
+  console.log("Button color was changed.");
+
+  //If buttonPressed = something change it to something else, set global variable to that. 
+
+  switch (buttonPressed) {
+    case "upcAbtn":
+      barcode_type = "UPC-A";
+      break;
+    case "upcEbtn":
+      barcode_type = "UPC-E";
+      break;
+    case "ean13btn":
+      barcode_type = "EAN-13";
+      break;
+    case "ean8btn":
+      barcode_type = "EAN-8";
+      break;
+  }  
+
+  console.log("Set global variable of barcode selected");
+  
+}
+
+// Select the operation you want to run 
+
+function selectOperation(opselected){
+console.log("Operation button selected")
+
+var gencheckdigit = document.getElementById("checkDigit");
+var expand = document.getElementById("expand");
+
+gencheckdigit.style.backgroundColor="white";
+gencheckdigit.style.color="rgb(12,20,141)";
+
+expand.style.backgroundColor="white";
+expand.style.color="rgb(12,20,141)";
+
+document.getElementById(opselected).style.backgroundColor="rgb(12,20,141)";
+document.getElementById(opselected).style.color="white";
+
+
 }
 
 function GenerateCheckDigit() {
@@ -7,9 +70,9 @@ function GenerateCheckDigit() {
   var input_barcode = NormalizeUPC(
     document.getElementById("input_barcode").value
   );
-  var input_barcodetype = document.getElementById("input_barcodetype").value;
+
   var barcode = NormalizeUPC("0");
-  switch (input_barcodetype) {
+  switch (barcode_type) {
     case "UPC-A":
       barcode = GenerateUPCA(input_barcode);
       break;
@@ -25,7 +88,7 @@ function GenerateCheckDigit() {
   }
   // This is the output
   document.getElementById("barcode_result").innerHTML =
-    "Type: " + input_barcodetype + ": " + barcode;
+    "Type: " + barcode_type + ": " + barcode;
 }
 
 function NormalizeUPC(orig_barcode) {

@@ -10,34 +10,37 @@
   </head>
 
   <body>
-    <h2>Check Digit Calculator</h2>
+    <h1>Check Digit Calculator</h1>
 
-    <div> 
-      <button id="upcAbtn" onClick="changebtncolor()">UPC A </button>
-      <button id="upcEbtn" onClick="changebtncolor()">UPC-E</button>
-      <button id="ean13btn" onClick="changebtncolor()">EAN 13</button>
-      <button id="ean8btn" onClick="changebtncolor()">EAN 8</button>
-    </div>
-    <div>
-      <label for="input_barcode">Enter barcode numbers, all exept last digit.</label>
-      <input type="text" name="input_barcode" id="input_barcode" />
-    </div>
+<!-- Select barcode type -->
 
     <div>
-      <label for="input_barcodetype">Select barcode format </label>
-      <select name="input_barcodetype" id="input_barcodetype">
-        <option value="UPC-A">UPC A</option>
-        <option value="UPC-E">UPC E</option>
-        <option value="EAN-13">EAN 13</option>
-        <option value="EAN-8">EAN 8</option>
-      </select>
+      <button id="upcAbtn" class="btn" onClick="changebtncolor('upcAbtn')">UPC A</button>
+      <button id="upcEbtn" class="btn" onClick="changebtncolor('upcEbtn')">UPC-E</button>
+      <button id="ean13btn" class="btn" onClick="changebtncolor('ean13btn')"> EAN 13 </button>
+      <button id="ean8btn" class="btn" onClick="changebtncolor('ean8btn')">EAN 8</button>
     </div>
 
-    <div>
-      <button onClick="GenerateCheckDigit()">Generate Check Digit</button>
+
+<!-- Choice between generating check digit and expanding the barcode-->
+
+<div id="divU"> 
+<button id="checkDigit" class="btn" onClick="selectOperation('checkDigit')"> Generate Check Digit</button>
+<button id="expand" class="btn" onClick="selectOperation('expand')">Expand</button>
+</div>
+
+<!-- Input box to enter the barcode-->
+
+<div>
+  <label for="input_barcode" class=textU>Enter barcode numbers, all exept last digit.</label>
+  <input type="text" name="input_barcode" class="textU" id="input_barcode" />
+</div>
+
+<div>
+      <button onClick="GenerateCheckDigit()" class="btn">Submit</button>
     </div>
-    <div id="barcode_result"></div>
+    <div id="barcode_result" class="textU"></div>
+ 
+ 
   </body>
 </html>
-
-
