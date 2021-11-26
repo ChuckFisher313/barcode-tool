@@ -1,3 +1,7 @@
+function changebtncolor() {
+  console.log("Change button color function executed: invoked")
+}
+
 function GenerateCheckDigit() {
   console.log("GenerateCheckDigit: invoked");
   var input_barcode = NormalizeUPC(
@@ -19,6 +23,7 @@ function GenerateCheckDigit() {
       barcode = GenerateEAN8(input_barcode);
       break;
   }
+  // This is the output
   document.getElementById("barcode_result").innerHTML =
     "Type: " + input_barcodetype + ": " + barcode;
 }

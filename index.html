@@ -12,10 +12,14 @@
   <body>
     <h2>Check Digit Calculator</h2>
 
+    <div> 
+      <button id="upcAbtn" onClick="changebtncolor()">UPC A </button>
+      <button id="upcEbtn" onClick="changebtncolor()">UPC-E</button>
+      <button id="ean13btn" onClick="changebtncolor()">EAN 13</button>
+      <button id="ean8btn" onClick="changebtncolor()">EAN 8</button>
+    </div>
     <div>
-      <label for="input_barcode"
-        >Enter barcode numbers, all exept last digit.</label
-      >
+      <label for="input_barcode">Enter barcode numbers, all exept last digit.</label>
       <input type="text" name="input_barcode" id="input_barcode" />
     </div>
 
@@ -35,3 +39,5 @@
     <div id="barcode_result"></div>
   </body>
 </html>
+
+

@@ -2,3 +2,19 @@ input,
 label {
   display: block;
 }
+
+#upcAbtn{
+background-color: blue;
+}
+
+#upcEbtn{
+background-color: blue;
+}
+
+#ean13btn{
+background-color: blue;
+}
+
+#ean8btn{
+background-color: blue;
+}
